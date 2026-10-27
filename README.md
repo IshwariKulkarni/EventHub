@@ -93,8 +93,6 @@ GET /api/reservations/?event_id=1
 
 ## Screenshots
 
-These screenshots are included in the repository and will display directly in GitHub when the README is rendered.
-
 ![Create reservation](eventhub/testing_screenshots/create_reservation.png)
 
 ![Cancel reservation](eventhub/testing_screenshots/cancel_reservation.png)
