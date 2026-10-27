@@ -91,6 +91,16 @@ GET /api/reservations/?event_id=1
 - Each successful reservation reduces the event's `available_seats` count.
 - Canceling a reservation restores the previously reserved seats back to the event.
 
+## Screenshots
+
+These screenshots are included in the repository and will display directly in GitHub when the README is rendered.
+
+![Create reservation](eventhub/testing_screenshots/create_reservation.png)
+
+![Cancel reservation](eventhub/testing_screenshots/cancel_reservation.png)
+
+![Reservation overview](eventhub/testing_screenshots/reservation_full_ss.png)
+
 ## Design decision
 
 I chose to enforce seat availability at the serializer level and update the event inventory immediately when a reservation is created. This keeps the system consistent and prevents overbooking, because the validation checks the current available seats before saving a reservation and the event's seat count is adjusted right away. That gives the API a clear business rule and reduces the risk of inconsistent inventory data.
