@@ -48,10 +48,8 @@ class ReservationViewSet(viewsets.ModelViewSet):
         event.available_seats += reservation.seats_reserved
         reservation.event.save()
 
-        # 2. Update reservation status
         reservation.status = 'cancelled'
         reservation.save()
 
-        # 3. Return the updated representation
         serializer = self.get_serializer(reservation)
         return Response(serializer.data, status=status.HTTP_200_OK)
